@@ -18,7 +18,7 @@ class FakeCpu {
         }
     }
 
-    subtract (arg1,arg2) {
+    sub (arg1,arg2) {
         if (this.registers.includes(arg1)) {
             this.registersObj[arg1] = this.registersObj[arg1] - arg2
         }
@@ -33,7 +33,7 @@ class FakeCpu {
         }
     }
 
-    multiply (arg1,arg2) {
+    mul (arg1,arg2) {
         if (this.registers.includes(arg1)) {
             this.registersObj[arg1] = this.registersObj[arg1] * arg2
         }
@@ -48,7 +48,7 @@ class FakeCpu {
         }
     }
 
-    divide (arg1,arg2) {
+    div (arg1,arg2) {
         if (this.registers.includes(arg1)) {
             this.registersObj[arg1] = this.registersObj[arg1] / arg2
         }
@@ -63,16 +63,22 @@ class FakeCpu {
         }
     }
 
-    move (arg1,arg2) {
+    mov (arg1,arg2) {
         if (this.registers.includes(arg1)) {
             this.registersObj[arg1] = arg2
         }
         if (this.registers.includes(arg2)) {
-            this.registersObj[arg2] = arg1
+            throw 'Second argument must be a value'
+        }
+        if (typeof(arg1) === 'number') {
+            throw 'First argument must be a register'
+        }
+        if (typeof(arg2) === 'number') {
+            this.registersObj[arg1] = arg2
         }
     }
 
-    compare (arg1,arg2) {
+    cmp (arg1,arg2) {
         if (arg1 > arg2) {
             this.flags = +1;
         }

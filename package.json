@@ -1,0 +1,22 @@
+{
+  "name": "cpu-simple-simulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cpu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manekhandanyan/cpu-simple-simulator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manekhandanyan/cpu-simple-simulator/issues"
+  },
+  "homepage": "https://github.com/manekhandanyan/cpu-simple-simulator#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
